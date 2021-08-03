@@ -2,5 +2,4 @@ streamlit
 torch
 torchvision
 numpy
-PIL
 pandas
