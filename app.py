@@ -43,9 +43,9 @@ def classify_image(img, labels):
         output = model(img)
     probablilities = (torch.nn.functional.softmax(output, dim = 1).flatten()) * 100
     return {labels[i]:[probablilities[i].item()] for i in range(len(labels))}
-model_path = "C:\\Users\\zahin\\OneDrive\\Desktop\\GitHub Repositories\\pneumonia_classification\\Model\\chest_xray_scan_model.pt"
+model_path = "pneumonia_classification/Model/chest_xray_scan_model.pt"
 model = get_model(model_path)
-labels_path = "C:\\Users\\zahin\\OneDrive\\Desktop\\GitHub Repositories\\pneumonia_classification\\scan_labels.txt"
+labels_path = "pneumonia_classification/scan_labels.txt"
 labels = get_labels(labels_path)
 st.title('Pneumonia Classification')
 st.write("This program allows users to upload images of lung scans and determine if the person whose lungs were scanned has pneumonia or not.")
